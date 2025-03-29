@@ -1,0 +1,134 @@
+.dish-list-item {
+  width: 95%;
+  border: 2px solid #ccd0d2;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dish-item-details-type-container {
+  display: flex;
+  align-items: flex-start;
+  width: 70%;
+}
+@media (max-width: 576) {
+  .dish-item-details-type-container {
+    width: 50%;
+  }
+}
+
+.dish-type-container {
+  padding: 5px;
+  margin-right: 10px;
+}
+.dish-type-indicator {
+  border-radius: 100px;
+  height: 20px;
+  width: 20px;
+}
+
+.dish-type-2-container {
+  border: 2px solid green;
+}
+.dish-type-2-indicator {
+  background-color: green;
+}
+.dish-type-1-container {
+  border: 2px solid #9c4248;
+}
+.dish-type-1-indicator {
+  background-color: #9c4248;
+}
+
+.dish-item-details-container {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dish-item-name {
+  margin-top: 0;
+  font-family: 'Roboto';
+  font-size: 18px;
+  color: #0a0c0c;
+}
+
+.dish-currency-container {
+  margin-top: 0;
+  display: flex;
+}
+
+.dish-currency {
+  font-family: 'Roboto';
+  margin-top: 0;
+  font-size: 16px;
+  margin-right: 10px;
+  color: #3e4141;
+}
+
+
+.dish-description {
+  margin-top: 0;
+  color: #797d7d;
+}
+
+.dish-item-count-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px 0 5px;
+  border-radius: 30px;
+  background-color: green;
+  width: 100px;
+  height: 35px;
+}
+.count-button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 22px;
+  cursor: pointer;
+}
+.count {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.not-available {
+  color: red;
+  font-family: 'Roboto';
+  margin-top: 0;
+}
+
+.dish-customizations {
+  font-family: 'Roboto';
+  color: #1c78f5;
+  font-weight: 500;
+}
+
+.dish-calories-img-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+}
+@media (max-width: 576) {
+  .dish-calories-img-container {
+    width: 50%;
+  }
+}
+
+.dish-calories {
+  color: orange;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+
+.dish-image {
+  width: 100px;
+  height: 150px;
+  border-radius: 5px;
+}

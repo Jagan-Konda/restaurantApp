@@ -1,0 +1,37 @@
+.bg-container {
+  width: 100%;
+}
+
+.table-menu-list-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  list-style-type: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 2px solid #f0f3f5;
+  box-shadow: 0px 4px 8px 0px #f0f3f5;
+  margin-top: 0;
+}
+
+.table-menu-list-button {
+  background-color: transparent;
+  width: 200px;
+  height: 80px;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.active-table-list-button {
+  border-bottom: 2px solid red;
+}
+
+.dishes-list-container {
+  padding-left: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
