@@ -40,6 +40,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .cart-icon {
@@ -62,4 +65,19 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-logout{
+  background-color: transparent;
+  padding: 8px;
+  border-radius: 5px;
+  margin-left: 15px;
+  color: #000000;
+  font-weight: 700;
+  font-family: 'Roboto';
+  cursor: pointer;
 }

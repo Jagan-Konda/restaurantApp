@@ -8,7 +8,7 @@ class Home extends Component {
   state = {
     restaurantDetails: {tableMenuList: []},
     activeCategoryId: '',
-    cartItems: [],
+    quantitiesOfDishesList: [],
   }
 
   componentDidMount() {
@@ -80,24 +80,24 @@ class Home extends Component {
 
   onCountIncrement = id => {
     this.setState(prevState => {
-      const itemExists = prevState.cartItems.find(
+      const itemExists = prevState.quantitiesOfDishesList.find(
         eachItem => eachItem.dishId === id,
       )
       return {
-        cartItems: itemExists
-          ? prevState.cartItems.map(eachItem =>
+        quantitiesOfDishesList: itemExists
+          ? prevState.quantitiesOfDishesList.map(eachItem =>
               eachItem.dishId === id
                 ? {...eachItem, count: eachItem.count + 1}
                 : eachItem,
             )
-          : [...prevState.cartItems, {dishId: id, count: 1}],
+          : [...prevState.quantitiesOfDishesList, {dishId: id, count: 1}],
       }
     })
   }
 
   onCountDecrement = id => {
     this.setState(prevState => {
-      const updatedCartItems = prevState.cartItems
+      const updatedQuantitiesOfDishesList = prevState.quantitiesOfDishesList
         .map(eachItem =>
           eachItem.dishId === id && eachItem.count > 0
             ? {...eachItem, count: eachItem.count - 1}
@@ -105,13 +105,17 @@ class Home extends Component {
         )
         .filter(eachItem => eachItem.count > 0)
 
-      return {cartItems: updatedCartItems}
+      return {quantitiesOfDishesList: updatedQuantitiesOfDishesList}
     })
   }
 
   render() {
-    const {restaurantDetails, activeCategoryId, cartItems} = this.state
-    const {restaurantName, tableMenuList} = restaurantDetails
+    const {
+      restaurantDetails,
+      activeCategoryId,
+      quantitiesOfDishesList,
+    } = this.state
+    const {tableMenuList, restaurantName} = restaurantDetails
     const activeCategoryDishes =
       tableMenuList.length !== 0
         ? tableMenuList.find(
@@ -119,17 +123,9 @@ class Home extends Component {
           ).categoryDishes
         : []
 
-    const cartItemsCount = cartItems.reduce(
-      (acc, curVal) => acc + curVal.count,
-      0,
-    )
-
     return (
       <div className="bg-container">
-        <Navbar
-          restaurantName={restaurantName}
-          cartItemsCount={cartItemsCount}
-        />
+        <Navbar restaurantName={restaurantName} />
         <ul className="table-menu-list-container">
           {tableMenuList.map(eachMenu => {
             const activeMenuButton =
@@ -155,11 +151,13 @@ class Home extends Component {
         </ul>
         <ul className="dishes-list-container">
           {activeCategoryDishes.map(eachDish => {
-            const isDishInCartItems = cartItems.find(
+            const isDishInQuantitiesOfDishesList = quantitiesOfDishesList.find(
               eachItem => eachItem.dishId === eachDish.dishId,
             )
 
-            const count = isDishInCartItems ? isDishInCartItems.count : 0
+            const count = isDishInQuantitiesOfDishesList
+              ? isDishInQuantitiesOfDishesList.count
+              : 0
 
             return (
               <DishListItem
